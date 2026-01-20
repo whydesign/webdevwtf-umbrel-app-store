@@ -16,5 +16,5 @@ This repository is a custom Umbrel Community App Store, created and maintained b
 3. Copy and paste the Github Link `https://github.com/whydesign/webdevwtf-umbrel-app-store.git` and confirme
 4. Click Open and install Apps from the Store
 
-### Watch the Video Tutorial
+### 🎞️ Watch the Video Tutorial
 https://user-images.githubusercontent.com/10330103/197889452-e5cd7e96-3233-4a09-b475-94b754adc7a3.mp4
