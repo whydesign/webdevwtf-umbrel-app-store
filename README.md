@@ -1,17 +1,20 @@
-## Umbrel Community App Store Template
+# ☂️ WebDev.WTF Umbrel App Store
 
-This repository is a template to create an Umbrel Community App Store. These additional app stores allow developers to distribute applications without submitting to the [Official Umbrel App Store](https://github.com/getumbrel/umbrel-apps).
+This repository is a custom Umbrel Community App Store, created and maintained by [WebDevWTF](https://web-dev.wtf/).
 
-## How to use:
+## 🔋 Available Apps
 
-1. Start by clicking the "Use this template" button located above.
-2. Assign an ID and name to your app store within the `umbrel-app-store.yml` file. This file specifies two important attributes:
-    - `id` - Acts as a unique prefix for every app within your Community App Store. You must start your application's ID with your app store's ID. For instance, in this template, the app store ID is `sparkles`, and there's an app named `hello world`. Consequently, the app's ID should be: `sparkles-hello-world`.
-    - `name` - This is the name of the Community App Store displayed in the umbrelOS UI.
-3. Change the name of the `sparkles-hello-world` folder to match your app's ID. The app ID is for you to decide. For example, if your app store ID is `whistles`, and your app is named My Video Downloader, you could set its app ID to `whistles-my-video-downloader`, and rename the folder accordingly.
-4. Next, enter your app's listing details in the `whistles-my-video-downloader/umbrel-app.yml`. These are displayed in the umbrelOS UI.
-5. Include the necessary Docker services in `whistles-my-video-downloader/docker-compose.yml`.
-6. That's it! Your Community App Store, featuring your unique app, is now set up and ready to go. To use your Community App Store, you can add its GitHub url the umbrelOS user interface as shown in the following demo:
+|                                            Logo                                                 |                   Name                      | Tagline                                  | Version   |      Host          | Port |
+|:-----------------------------------------------------------------------------------------------:|:-------------------------------------------:|:-----------------------------------------|:---------:|:------------------:|:----:|
+| ![Logo](https://github.com/miniflux/logo/blob/master/original/favicon-32-bg-white.png?raw=true) | [Miniflux](hhttps://github.com/miniflux/v2) | A minimalist and opinionated feed reader |  2.2.16   | wtf-miniflux_web_1 | 8064 |
 
 
+## 🚀 How to use the App Store
+
+1. Open the App Store on your Umbrel Dashboard
+2. On the top right side, click the three dots and select *Community App Stores*
+3. Copy and paste the Github Link `https://github.com/whydesign/webdevwtf-umbrel-app-store.git` and confirme
+4. Click Open and install Apps from the Store
+
+### Watch the Video Tutorial
 https://user-images.githubusercontent.com/10330103/197889452-e5cd7e96-3233-4a09-b475-94b754adc7a3.mp4
