@@ -1,0 +1,77 @@
+manifestVersion: 1
+id: wtf-miniflux
+name: Miniflux
+tagline: Miniflux is a minimalist and opinionated feed reader.
+icon: https://raw.githubusercontent.com/miniflux/logo/refs/heads/master/original/icon-512.png
+category: files
+version: "2.2.16"
+port: 8064
+description: >-
+  Miniflux is a minimalist and opinionated feed reader. It's simple, fast and lightweight.
+  
+  Optimized for readability
+    - The page layout, fonts, and colors are chosen to enhance readability on a screen. The content is the most important thing. Everything else is just noise.
+  
+  Download original article contents
+    - Do you have feeds that display only a summary? Automatically fetch the original article.
+  
+  No fancy features
+    - Do you dislike bloated software? Miniflux focuses on simplicity. Less is more!
+  
+  Fast and efficient
+    - Be productive by using keyboard shortcuts to navigate through the application. Quickly scan your unread items with the lightweight user interface.
+  
+  Your privacy is guaranteed
+    - Miniflux automatically removes pixel trackers, eliminates tracking parameters from URLs, uses a media proxy to prevent third-party tracking, and does not forward any referrer. There is absolutely no telemetry or advertising.
+  
+  Free, open source, and self-hosted
+    - Miniflux is a free and open-source project distributed under the permissive Apache 2.0 License.
+  
+  Visit Miniflux's profile on Liberapay: https://en.liberapay.com/Miniflux/
+  
+  The Miniflux documentation is available here: https://miniflux.app/docs/
+
+developer: Frédéric Guillot
+website: https://miniflux.app
+submitter: WebDevWTF
+submission: https://github.com/getumbrel/umbrel-hello-world-app
+repo: https://github.com/miniflux/v2
+support: https://github.com/miniflux/v2/issues
+gallery:
+  - https://raw.githubusercontent.com/dennysubke/dennys-umbrel-app-gallery/main/denny-noflux/1.jpg
+  - https://raw.githubusercontent.com/dennysubke/dennys-umbrel-app-gallery/main/denny-noflux/2.jpg
+  - https://raw.githubusercontent.com/dennysubke/dennys-umbrel-app-gallery/main/denny-noflux/3.jpg
+releaseNotes: >-
+  Security
+    - Disallow the media proxy from fetching resources on private networks to mitigate potential SSRF issues. This behavior is configurable at the instance level.
+    - Disallow fetching feed icons from private networks to reduce the SSRF attack surface. This is also configurable at the instance level.
+    - Add the TRUSTED_REVERSE_PROXY_NETWORKS configuration option to prevent spoofing of HTTP headers such as X-Forwarded-For, X-Forwarded-Proto, and X-Real-Ip. This option must be configured when AUTH_PROXY_HEADER is enabled.
+    - Stop logging generated Google Reader API tokens, even when debug mode is enabled.
+    - Remove the CORS handler from the Google Reader API, as it is not intended to be used by web clients, reducing the overall attack surface.
+
+  Performance and Storage
+    - Avoid indexing the content of removed entries, significantly reducing database index size after cleanup.
+    - Minor storage and database refactoring to simplify code paths and reduce unnecessary formatting overhead.
+
+  API and Integrations
+    - Add a new API endpoint to import entries into an existing feed.
+    - Execute the content sanitizer when updating or importing entries through the API to ensure consistent sanitization.
+    - Improve Google Reader API compatibility by removing unnecessary output parameter checks and aligning behavior with other open-source RSS readers.
+    - Add an auto-push option to the Readeck integration.
+
+  User Interface
+    - Add smooth page transitions for a more polished navigation experience.
+    - Add a route to view individual starred entries directly from a category’s starred list.
+    - Add a link to the GitHub contributors page in templates.
+    - Update all translations.
+
+  Documentation and Tooling
+    - Improve consistency and fix typos in the miniflux(1) manual page.
+    - Remove the obsolete version key from Docker Compose examples.
+    - Update the Go devcontainer image to go:1-trixie.
+    - Update the Distroless container base image to Debian 13.
+    - Update GitHub Actions dependencies.
+dependencies: []
+path: ""
+defaultUsername: "admin"
+defaultPassword: "umbrel"

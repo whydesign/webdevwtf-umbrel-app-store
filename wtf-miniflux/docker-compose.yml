@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: wtf-miniflux_web_1
+      APP_PORT: 8064
+
+  web:
+    image: miniflux/miniflux:2.2.16@sha256:1f37163a178189eba09bf0a1c96d7335aa1fa474d4f958f51e0c5ad9f8136979
+    restart: on-failure
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DATABASE_URL=postgres://miniflux:secret@db/miniflux?sslmode=disable
+      - RUN_MIGRATIONS=1
+      - CREATE_ADMIN=1
+      - ADMIN_USERNAME=admin
+      - ADMIN_PASSWORD=umbrel
+  db:
+    image: postgres:18@sha256:5773fe724c49c42a7a9ca70202e11e1dff21fb7235b335a73f39297d200b73a2
+    environment:
+      - POSTGRES_USER=miniflux
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=miniflux
+    volumes:
+      - ${APP_DATA_DIR}/data/miniflux-db:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "miniflux"]
+      interval: 10s
+      start_period: 30s
+volumes:
+  miniflux-db:
