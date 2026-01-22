@@ -2,7 +2,7 @@ manifestVersion: 1
 id: wtf-miniflux
 name: Miniflux
 tagline: Miniflux is a minimalist and opinionated feed reader.
-icon: https://raw.githubusercontent.com/miniflux/logo/refs/heads/master/original/icon-512.png
+icon: https://raw.githubusercontent.com/whydesign/webdevwtf-umbrel-app-gallery/refs/heads/main/wtf-miniflux/logo.png
 category: files
 version: "2.2.16"
 port: 8064
@@ -38,9 +38,10 @@ submission: https://github.com/getumbrel/umbrel-hello-world-app
 repo: https://github.com/miniflux/v2
 support: https://github.com/miniflux/v2/issues
 gallery:
-  - https://raw.githubusercontent.com/dennysubke/dennys-umbrel-app-gallery/main/denny-noflux/1.jpg
-  - https://raw.githubusercontent.com/dennysubke/dennys-umbrel-app-gallery/main/denny-noflux/2.jpg
-  - https://raw.githubusercontent.com/dennysubke/dennys-umbrel-app-gallery/main/denny-noflux/3.jpg
+  - https://raw.githubusercontent.com/whydesign/webdevwtf-umbrel-app-gallery/refs/heads/main/wtf-miniflux/01.png
+  - https://raw.githubusercontent.com/whydesign/webdevwtf-umbrel-app-gallery/refs/heads/main/wtf-miniflux/02.png
+  - https://raw.githubusercontent.com/whydesign/webdevwtf-umbrel-app-gallery/refs/heads/main/wtf-miniflux/03.png
+  - https://raw.githubusercontent.com/whydesign/webdevwtf-umbrel-app-gallery/refs/heads/main/wtf-miniflux/04.png
 releaseNotes: >-
   Security
     - Disallow the media proxy from fetching resources on private networks to mitigate potential SSRF issues. This behavior is configurable at the instance level.
