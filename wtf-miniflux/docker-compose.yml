@@ -4,7 +4,7 @@ services:
   app_proxy:
     environment:
       APP_HOST: wtf-miniflux_web_1
-      APP_PORT: 8064
+      APP_PORT: 8080
 
   web:
     image: miniflux/miniflux:2.2.16@sha256:1f37163a178189eba09bf0a1c96d7335aa1fa474d4f958f51e0c5ad9f8136979
