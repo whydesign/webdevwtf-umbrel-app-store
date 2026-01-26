@@ -1,0 +1,85 @@
+manifestVersion: 1
+id: wtf-viniplay
+name: ViniPlay
+tagline: A powerful, self-hosted IPTV player with a modern web interface.
+icon: https://raw.githubusercontent.com/whydesign/webdevwtf-umbrel-app-gallery/refs/heads/main/wtf-viniplay/logo.png
+category: media
+version: "0.11.0"
+port: 8998
+description: >-
+  ViniPlay transforms your M3U and EPG files into a polished, high-performance streaming experience. It's a full-featured IPTV solution that runs in a Docker container, providing a robust Node.js backend to handle streams and a sleek, responsive frontend for an exceptional user experience.
+
+  The server-side backend resolves common CORS and browser compatibility issues by proxying or transcoding streams with FFMPEG, while the feature-rich frontend provides a user experience comparable to premium IPTV services.
+
+  ## ✨ Features
+
+   - 👤 **Multi-User Management**: Secure the application with a dedicated admin account. Create, edit, and manage standard user accounts.
+   - 📺 **Modern TV Guide**: A high-performance, virtualized EPG grid that handles thousands of channels and programs smoothly. Features include advanced search, channel favoriting, and a "Recents" category.
+   - 🖼️ **Multi-View**: Drag, drop, and resize players on a grid to watch multiple streams simultaneously. Save and load custom layouts. "Immersive view" will hide all UI elements and only leave the players on the page to maximize the watching experience.
+   - 🛜 **Chromecast Support**: Cast your streams directly to any Google Cast-enabled device on your network. (This will only work if your source signal is strong and correctly passed without package missing, due to Cast framework)
+   - 🔔 **Push Notifications**: Set reminders for upcoming programs and receive push notifications in your browser, even when the app is closed.
+   - ⚙️ **Powerful Transcoding - even with GPUs**: The backend uses FFMPEG to process streams, ensuring compatibility across all modern browsers and devices. Create custom stream profiles to tailor transcoding settings. GPU transcoding supported. (Nvidia, InterlQSV and Vaapi)
+   - 📂 **Flexible Source Management**: Add M3U and EPG sources from either local files, XC code and remote URLs. Set automatic refresh intervals for URL-based sources to keep your guide data fresh.
+   - 🚀 **High Performance UI**: The frontend is built with performance in mind, using UI virtualization for the guide and efficient state management to ensure a fast and responsive experience.
+   - 🐳 **Dockerized Deployment**: The entire application is packaged in a single Docker container for simple, one-command deployment using Docker or Docker Compose.
+   - ▶️ **Picture-in-Picture**: Pop out the player to keep watching while you work on other things.
+   - 🎥 **DVR**: Record programs using FFMPEG. Schedule recording via the TV Guide, or set specific channels and time with ease.
+   - 📽️ **Single player**: Play .m3u8 and .ts links directly from the browser, with detailed console logs and recorded history
+   - 👥 **Admin monitoring page**: Monitor users watch stream in real time, store historical plays, and broadcast messages to all users.
+   - 📺 **VODs support**: Play your VODs from your provider, divided cleanly in the UI with a scalable grid, with filters and tabs for Movies and Series (IMPORTANT: this only workd with XC API log in)
+
+developer: Andrea Ardovini
+website: https://github.com/ardoviniandrea
+submitter: WebDevWTF
+submission: https://github.com/getumbrel/umbrel-hello-world-app
+repo: https://github.com/ardoviniandrea/ViniPlay
+support: https://github.com/ardoviniandrea/ViniPlay/issues
+gallery:
+  - https://raw.githubusercontent.com/whydesign/webdevwtf-umbrel-app-gallery/refs/heads/main/wtf-viniplay/01.png
+  - https://raw.githubusercontent.com/whydesign/webdevwtf-umbrel-app-gallery/refs/heads/main/wtf-viniplay/02.png
+releaseNotes: >-
+  💾 ARM64 official support
+  Thanks @aptalca for the help bringing the official image of ViniPlay to arm64 devices.
+  I really need help with testing here! Please if you have a spare raspberry you can use, try pulling the latest :dev image and report back.
+  Raspberry PIs do not have GPU acceleration, so make sure to use the default Redirect stream profile or a very very light ffmpeg command.
+
+  🙌 Notable additions
+  Added compressed EPG formats as a source
+  Play any file format from the Player page
+  Added a “Custom URL” source for Multi View, allowing to play channels from your list alongside with one-off links
+  Added a LOG folder in your /data volume and a log extraction section in Settings. This will hopefully expedite future troubleshootings
+  Added conditional stream profiles based on detected GPUs, hiding all other profiles. Default is now “Redirect” to minimize CPU usage
+
+  ⏩ CAST framework major refactor
+  CAST has been unstable for a while so I tried to completely rewrite it.
+  VERY IMPORTANT: to use CAST, ViniPlay needs to be on a https:// protocol, so you need to use a reverse proxy.
+  Added separate profiles just for CAST, as the normal ones do not work with the CAST framework
+  Added GPU profiles for CAST
+  Improved graceful termination of CAST channels
+
+  🏙 UI improvements
+  Player now has a locked ratio calculation to show every time the player controls (with a lock icon to allow free resize if needed)
+  Added code-number version for the image you are pulling in Settings
+  TV Guide time bar now calculates the exact time at any layout change (not only at page refresh), greatly improving mobile layouts experience
+  Activity page now shows correct RAM usage
+  Stream info overlay now has readable Video and Audio codes (thanks @RoninTech for the suggestion)
+  It’s now possible to resize player and channel info on touchscreen devices
+  Added multi language and subtitles control in the Player UI, hidden if not detected (to be properly tested)
+
+  🔨 Bug fixes
+  Transcoding the same channel on 2 or more devices with the same account is now handled correctly and terminates gracefully each distinct player
+  Fix DVR start on TV Guide, previously reloading the UI
+  Fix NOW button and time bar disappearing that required a hard refresh
+  DVR now works with all logs levels introduced on v0.10
+  DVR files are not protected anymore to simplify their management
+
+  👥Account Management
+  You can now specifically select which source and which group every account has access to.
+  This is useful to manage what channels and VODs each account can watch, differentiating the experience for Kids, Adults, Sports lovers, etc.
+  Default on each new account is the whole m3u source list.
+  Please see the screenshots below as a reference.
+
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
