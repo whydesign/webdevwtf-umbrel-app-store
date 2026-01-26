@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: wtf-reactflux_web_1
+      APP_PORT: 2000
+
+  web:
+    image: electh/reactflux@sha256:f1cb9cf10f69d116725ab2bec82e0139b5c95b176c3ff99a8a810e98bc4f998b
+    restart: always
