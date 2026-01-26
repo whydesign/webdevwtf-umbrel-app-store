@@ -1,0 +1,28 @@
+manifestVersion: 1
+id: wtf-bytestash
+name: ByteStash
+tagline: A code snippet storage solution written in React & node.js
+icon: https://raw.githubusercontent.com/whydesign/webdevwtf-umbrel-app-gallery/refs/heads/main/wtf-bytestash/logo.png
+category: developer
+version: "1.5.10"
+port: 5000
+description: >-
+  ByteStash is a self-hosted web application designed to store, organise, and manage your code snippets efficiently. With support for creating, editing, and filtering snippets, ByteStash helps you keep track of your code in one secure place.
+  
+  - Create and Edit Snippets: Easily add new code snippets or update existing ones with an intuitive interface.
+  - Filter by Language and Content: Quickly find the right snippet by filtering based on programming language or keywords in the content.
+  - Secure Storage: All snippets are securely stored in a sqlite database, ensuring your code remains safe and accessible only to you.
+
+developer: Jordan Dalby
+website: https://github.com/jordan-dalby
+submitter: WebDevWTF
+submission: https://github.com/getumbrel/umbrel-hello-world-app
+repo: https://github.com/jordan-dalby/ByteStash
+support: https://github.com/jordan-dalby/ByteStash/issues
+gallery:
+  - https://raw.githubusercontent.com/whydesign/webdevwtf-umbrel-app-gallery/refs/heads/main/wtf-bytestash/01.png
+releaseNotes:
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
