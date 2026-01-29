@@ -1,0 +1,32 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: wtf-gamearch_app_1
+      APP_PORT: 8099
+
+  app:
+    image: quay.io/ckoenig/gamearch:1.0.2@sha256:679afd9dd0f6b9266b63a417e3e4885b9607c60b3665c269eeaa9081d0677222
+    restart: on-failure
+    environment:
+      REACT_APP_SITE_URL: http://${DEVICE_DOMAIN_NAME}:${APP_PROXY_PORT}
+      REACT_APP_API_ENDPOINT: http://${DEVICE_DOMAIN_NAME}:${APP_PROXY_PORT}
+      BACKEND_URL: http://${DEVICE_DOMAIN_NAME}:${APP_PROXY_PORT}
+      CORS_ORIGIN: http://${DEVICE_DOMAIN_NAME}:${APP_PROXY_PORT}
+      MAIL_HOST: smtp.1und1.de
+      MAIL_PORT: "465"
+      MAIL_EMAIL: noreply@example.com
+      MAIL_PASSWORD: MySuperSecretPassWord
+      MAIL_ENCRYPTION: null
+      SALT: ${APP_SEED}
+      JWT_SECRET: ${APP_SEED}
+      ADMIN_EMAIL: gamearch@umbrel.local
+      INITIAL_ADMIN_PASSWORD: yo9wGTqK32adse38duweu7r4nf47
+    volumes:
+      - ${APP_DATA_DIR}/data/gamearch-db:/data/db
+      - ${APP_DATA_DIR}/data/gamearch-uploads:/data/public/uploads
+
+volumes:
+  gamearch-db: null
+  gamearch-uploads: null

@@ -1,0 +1,25 @@
+manifestVersion: 1
+id: wtf-gamearch
+name: GameArch
+tagline: Tool for your videogame collection.
+icon: https://raw.githubusercontent.com/whydesign/webdevwtf-umbrel-app-gallery/refs/heads/main/wtf-gamearch/logo.png
+category: media
+version: "1.0.3"
+port: 8080
+description: >-
+  GameArch is a self-hosted open-source tool for your videogame collection.
+
+developer: Martin Neubauer
+website: https://github.com/Cryptec
+submitter: WebDevWTF
+submission: https://github.com/getumbrel/umbrel-hello-world-app
+repo: https://github.com/Cryptec/GameArch
+support: https://github.com/Cryptec/GameArch/issues
+gallery:
+  - https://raw.githubusercontent.com/whydesign/webdevwtf-umbrel-app-gallery/refs/heads/main/wtf-gamearch/01.png
+  - https://raw.githubusercontent.com/whydesign/webdevwtf-umbrel-app-gallery/refs/heads/main/wtf-gamearch/02.png
+releaseNotes:
+dependencies: []
+path: ""
+defaultUsername: "gamearch@umbrel.local"
+defaultPassword: "yo9wGTqK32adse38duweu7r4nf47"
