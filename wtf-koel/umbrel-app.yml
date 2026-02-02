@@ -1,0 +1,27 @@
+manifestVersion: 1
+id: wtf-koel
+name: Koel
+tagline: A personal music streaming solution that works.
+icon: https://raw.githubusercontent.com/dennysubke/dennys-umbrel-app-gallery/main/denny-koel/logo.png
+category: media
+version: "8.3.0"
+port: 8333
+description: >-
+  Koel (also stylized as koel, with a lowercase k) is a simple web-based personal audio streaming service written in Vue on the client side and Laravel on the server side.
+  
+  Targeting web developers, Koel embraces some of the more modern web technologies to do its job.
+
+developer: Phan An
+website: https://koel.dev/
+submitter: WebDevWTF
+submission: https://github.com/getumbrel/umbrel-hello-world-app
+repo: https://github.com/koel/koel
+support: https://github.com/koel/koel/issues
+gallery:
+  - https://raw.githubusercontent.com/whydesign/webdevwtf-umbrel-app-gallery/refs/heads/main/wtf-miniflux/01.png
+  - https://raw.githubusercontent.com/whydesign/webdevwtf-umbrel-app-gallery/refs/heads/main/wtf-miniflux/02.png
+releaseNotes:
+dependencies: []
+path: ""
+defaultUsername: "admin@koel.dev"
+defaultPassword: "KoelIsCool"
