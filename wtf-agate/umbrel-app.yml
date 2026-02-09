@@ -1,0 +1,27 @@
+manifestVersion: 1
+id: wtf-agate
+name: Agate
+tagline: Kleiner Gemini Server in Rust
+icon: https://raw.githubusercontent.com/whydesign/webdevwtf-umbrel-app-gallery/refs/heads/main/wtf-agate/logo.png
+category: networking
+version: "1.0.0"
+port: 1965
+description: >
+  Agate ist ein minimalistischer Gemini Server.
+  Hostet statische Gemini-Seiten aus dem /gmi Ordner und nutzt TLS Zertifikate aus /certs.
+  
+  Mehr Informationen findest du auf der [Gemini Website](https://geminiprotocol.net/), auf [Wikipedia](https://en.wikipedia.org/wiki/Gemini_(protocol)) und auf [GitHub](https://github.com/mbrubeck/agate).
+
+developer: Matt Brubeck
+website: https://limpet.net/mbrubeck
+submitter: WebDevWTF
+submission: https://github.com/getumbrel/umbrel-hello-world-app
+repo: https://github.com/mbrubeck/agate
+support: https://github.com/mbrubeck/agate/issues
+gallery:
+  - https://raw.githubusercontent.com/whydesign/webdevwtf-umbrel-app-gallery/refs/heads/main/wtf-agate/01.png
+  - https://raw.githubusercontent.com/whydesign/webdevwtf-umbrel-app-gallery/refs/heads/main/wtf-agate/02.png
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""

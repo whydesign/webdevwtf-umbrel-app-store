@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: wtf-agate_app_1
+      APP_PORT: 1965
+
+  app:
+    image: ghcr.io/mbrubeck/agate:latest
+    restart: unless-stopped
+    command: [
+      "--hostname", "${DEVICE_DOMAIN_NAME}"
+    ]
+    volumes:
+      - ${APP_DATA_DIR}/data/gmi:/gmi
+      - ${APP_DATA_DIR}/data/certs:/certs
+    environment:
+      - TZ=Europe/Berlin
+
+volumes:
+  gmi:
+  certs:
